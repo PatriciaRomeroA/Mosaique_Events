@@ -3,8 +3,6 @@ import {
   Mail,
   MapPin,
   Phone,
-  Sparkles,
-  Zap,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/Button";
@@ -15,11 +13,8 @@ type FooterLink = {
 };
 
 const ctaLinks = {
-  primary: { label: "Start Now", href: "/contacto" },
-  secondary: {
-    label: "Book a Demo",
-    href: "mailto:partnership@nova.com?subject=Book%20a%20Demo",
-  },
+  primary: { label: "Inventario", href: "/alquiler" },
+  secondary: { label: "Cotizar evento", href: "/contacto" },
 } as const;
 
 const contact = {
@@ -125,27 +120,18 @@ function FooterAnchor({
 
 export function Footer() {
   return (
-    <footer className="nova-footer relative isolate overflow-hidden bg-[#151617] text-white">
+    <footer className="relative isolate overflow-hidden bg-forest text-white">
       <div className="relative z-10 mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
         <section aria-labelledby="footer-cta-title" className="text-center">
-          <div className="inline-flex items-center gap-1.5 rounded-lg border border-white/5 bg-white/10 px-3 py-1.5 text-sm font-semibold text-white/85 shadow-[0_1px_0_rgba(255,255,255,0.08)_inset]">
-            <Zap aria-hidden="true" className="h-4 w-4 text-white/55" />
-            Unlock Power
-          </div>
-
           <h2
             id="footer-cta-title"
-            className="mx-auto mt-10 max-w-5xl text-balance font-display text-4xl font-bold leading-[1.12] tracking-normal text-white sm:text-5xl lg:text-[3.75rem]"
+            className="mx-auto max-w-5xl text-balance font-display text-4xl font-bold leading-[1.12] tracking-normal text-white sm:text-5xl lg:text-[3.75rem]"
           >
             <span className="block sm:whitespace-nowrap">
-              Ready to Turn Complexity
+              ¿Listo para crear un evento
             </span>
             <span className="block">
-              into{" "}
-              <span className="bg-gradient-to-r from-[#9b42ff] via-[#d26fb4] to-[#ff9638] bg-clip-text text-transparent">
-                Clarity
-              </span>
-              <span className="text-[#ff9638]">?</span>
+              inolvidable con Mosaïque?
             </span>
           </h2>
 
@@ -154,27 +140,24 @@ export function Footer() {
               link={ctaLinks.primary}
               className={cn(
                 buttonVariants({ variant: "primary", size: "lg" }),
-                "h-12 min-w-40 rounded-xl bg-white px-9 text-base font-bold text-[#202124] shadow-[0_0_18px_rgba(255,255,255,0.25)] hover:bg-white/90 focus-visible:ring-white/60 focus-visible:ring-offset-[#151617]"
+                "h-12 min-w-40 rounded-xl bg-white px-9 text-base font-bold text-forest shadow-[0_0_18px_rgba(255,255,255,0.18)] hover:bg-cream focus-visible:ring-white/60 focus-visible:ring-offset-forest"
               )}
             />
             <FooterAnchor
               link={ctaLinks.secondary}
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "h-12 min-w-40 rounded-xl border-white/65 px-8 text-base font-bold text-white/80 hover:border-white hover:bg-white/8 hover:text-white focus-visible:ring-white/60 focus-visible:ring-offset-[#151617]"
+                "h-12 min-w-40 rounded-xl border-white/65 px-8 text-base font-bold text-white/80 hover:border-white hover:bg-white/8 hover:text-white focus-visible:ring-white/60 focus-visible:ring-offset-forest"
               )}
             />
           </div>
         </section>
 
         <div className="mt-20 grid gap-14 lg:mt-24 lg:grid-cols-[minmax(18rem,1fr)_1.65fr] lg:gap-16">
-          <section aria-label="Nova contact information" className="flex flex-col">
-            <Link href="/" className="group inline-flex w-fit items-center gap-4">
-              <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white text-[#151617] shadow-[0_14px_32px_rgba(0,0,0,0.22)] transition-transform duration-300 group-hover:-translate-y-0.5">
-                <Sparkles aria-hidden="true" className="h-7 w-7" />
-              </span>
+          <section aria-label="Mosaïque contact information" className="flex flex-col">
+            <Link href="/" className="inline-flex w-fit items-center">
               <span className="text-4xl font-bold tracking-normal text-white/85">
-                Nova
+                Mosaïque
               </span>
             </Link>
 
@@ -186,14 +169,14 @@ export function Footer() {
               <p className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
                   href={`tel:${contact.phone}`}
-                  className="inline-flex items-center gap-3 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#151617]"
+                  className="inline-flex items-center gap-3 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
                 >
                   <Phone aria-hidden="true" className="h-5 w-5 text-white/45" />
                   {contact.phoneDisplay}
                 </a>
                 <a
                   href={`mailto:${contact.email}`}
-                  className="inline-flex items-center gap-3 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#151617]"
+                  className="inline-flex items-center gap-3 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
                 >
                   <Mail aria-hidden="true" className="h-5 w-5 text-white/45" />
                   {contact.email}
@@ -209,7 +192,7 @@ export function Footer() {
                     aria-label={social.label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-9 w-9 items-center justify-center rounded-md text-white/32 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#151617]"
+                    className="flex h-9 w-9 items-center justify-center rounded-md text-white/32 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
                   >
                     {social.mark === "play" ? (
                       <span
@@ -241,7 +224,7 @@ export function Footer() {
                     <li key={link.label}>
                       <FooterAnchor
                         link={link}
-                        className="text-[0.9375rem] font-medium text-white/46 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#151617]"
+                        className="text-[0.9375rem] font-medium text-white/46 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
                       />
                     </li>
                   ))}
@@ -259,7 +242,7 @@ export function Footer() {
                 <li key={link.label}>
                   <FooterAnchor
                     link={link}
-                    className="transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#151617]"
+                    className="transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
                   />
                 </li>
               ))}
@@ -268,15 +251,15 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="relative z-10 border-t border-white/5 px-5 pb-28 pt-10 text-center sm:pb-36">
+      <div className="relative z-10 border-t border-white/5 px-5 pb-10 pt-10 text-center sm:pb-14">
         <p className="text-sm font-semibold text-white/16 sm:text-base">
-          © Copyright 2025 Nova. All rights reserved.
+          © Copyright 2025 Mosaïque. All rights reserved.
         </p>
         <p
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-[-0.22em] select-none overflow-hidden text-center font-display text-[31vw] font-bold leading-none tracking-normal text-white/[0.045] sm:bottom-[-0.32em]"
+          className="pointer-events-none mt-4 select-none overflow-hidden text-center font-display text-[clamp(3.75rem,17vw,15rem)] font-bold leading-none tracking-normal text-white/[0.045]"
         >
-          NOVA
+          MOSAÏQUE
         </p>
       </div>
     </footer>
