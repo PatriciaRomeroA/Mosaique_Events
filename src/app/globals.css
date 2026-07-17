@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand — Mosaïque Events */
+  --forest: #0b241c;
+  --forest-soft: #14352a;
+  --forest-mid: #1a4335;
+  --gold: #c1a166;
+  --gold-light: #d4b87a;
+  --gold-muted: #a8864f;
+
+  /* Surfaces & text */
+  --ink: var(--forest);
+  --ink-soft: var(--forest-soft);
+  --cream: #f7f4ef;
+  --sand: #ebe6dc;
+  --beige: #cbbba6;
+  --stone: #6e7a72;
+  --background: var(--cream);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-forest: var(--forest);
+  --color-forest-soft: var(--forest-soft);
+  --color-forest-mid: var(--forest-mid);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+  --color-beige: var(--beige);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-muted: var(--gold-muted);
+  --color-stone: var(--stone);
+  --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-montserrat);
+  --font-display: var(--font-montserrat);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-montserrat), ui-sans-serif, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--gold) 45%, transparent);
+  color: var(--ink);
+}
